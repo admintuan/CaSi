@@ -1,18 +1,14 @@
 import React {Component} from "react";
-import {
-        Text,
+import {Text,
         View
 
-} from "rect-native";
-
+} from "react-native";
 export default class App extends Component{
-        render(){
-                return(
-                        <View>
-                                <Text> Hello
-                                </Text>
-                        </View>
-
-                );
-        }        
-}
+    render{
+        return(
+            <View>
+                <Text>Hello</Text>
+            </View>
+        );
+    }
+} 

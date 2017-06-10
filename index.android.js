@@ -7,13 +7,16 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  StyleSheet,
+  Text,
+  View
 } from 'react-native';
-import App from "./Components/App.js";
 
 export default class CaSi extends Component {
   render() {
     return (
-      <App />
+      <App >
     );
-  
+  }
+}
 AppRegistry.registerComponent('CaSi', () => CaSi);
