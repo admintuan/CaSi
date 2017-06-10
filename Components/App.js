@@ -1,14 +1,23 @@
-import React {Component} from "react";
-import {Text,
-        View
+import React, {Component} from "react";
+import {Text,View,Navigator} from "react-native";
+import ChiTiet from "../Components/ChiTiet.js";
+import DanhSach from "../Components/DanhSach.js";
 
-} from "react-native";
 export default class App extends Component{
-    render{
+    renderScene(route, navigator){
+        switch (route.name) {
+            case "danhsach": return(<DanhSach/>);
+                                
+            case "chitiet": return(<ChiTiet/>);
+                
+        }
+    }
+    render(){
         return(
-            <View>
-                <Text>Hello</Text>
-            </View>
+           <Navigator
+                initialRoute={{name: "danhsach"}}
+                renderScene={this.renderScene}
+           />
         );
     }
 } 
