@@ -1,5 +1,5 @@
 import React from 'react';
-import {StackNavigator} from 'react-navigation';
+import {StackNavigator,TabNavigator, DrawerNavigator} from 'react-navigation';
 
 import Detail from './screens/Detail';
 import Menu from './screens/Menu';
@@ -20,4 +20,43 @@ export const HomeStack= StackNavigator({
         }
     }
 })
+export const UserStack=StackNavigator({
+    ManHinh_User:{
+        screen: User,
+        navigationOptions:{title:'User'}
+    }   
+})
 
+export const Tabbar=TabNavigator({
+    HOME:{
+        screen: HomeStack,
+        navigationOptions:{
+            tabBarLabel:'HOME'
+        }
+    },
+    USER:{
+        screen: UserStack,
+        navigationOptions:{
+            tabBarLabel:'USER'
+        }
+    }
+},
+    {tabBarPosition:'bottom',
+    swipeEnabled: true,
+    tabBarOptions:{
+        style:{backgroundColor:'blue'},
+        activeTintColor:'red',
+        inactiveTintColor :'#FFF'
+    }
+})
+export const SideMenu=DrawerNavigator({
+    Menu:{
+        screen:Tabbar
+    }
+},
+    {
+        drawerWidth: 200,
+        drawerPosition: 'left',
+        contentComponent: props => <Menu {...props} />
+    }
+)

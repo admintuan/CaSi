@@ -15,6 +15,12 @@ export default class Home extends Component{
                     <Text style={{color:'#fff', fontSize:20, padding:10}}> Go to Back
                     </Text>    
                 </TouchableOpacity>
+                <TouchableOpacity style={{backgroundColor:'red'}}
+                    onPress={()=>{this.props.navigation.navigate('DrawerOpen')}}
+                >
+                    <Text style={{color:'#fff', fontSize:20, padding:10}}> Go to Menu
+                    </Text>    
+                </TouchableOpacity>
             </View>
         );
     }
