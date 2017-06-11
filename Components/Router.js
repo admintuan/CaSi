@@ -8,7 +8,16 @@ import Home from './screens/Home';
 
 export const HomeStack= StackNavigator({
     ManHinh_Home:{
-        screen: Home
+        screen: Home,
+        navigationOptions:{
+            title:'Trang Chủ'
+        }
+    },
+    ManHinh_Detail:{
+        screen: Detail,
+                navigationOptions:{
+            title:'Chi Tiết'
+        }
     }
 })
 
