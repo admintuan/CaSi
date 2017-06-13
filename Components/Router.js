@@ -15,7 +15,7 @@ export const HomeStack= StackNavigator({
     },
     ManHinh_Detail:{
         screen: Detail,
-                navigationOptions:{
+            navigationOptions:{
             title:'Chi Tiết'
         }
     }
@@ -25,7 +25,7 @@ export const UserStack=StackNavigator({
         screen: User,
         navigationOptions:{title:'User'}
     }   
-})
+});
 
 export const Tabbar=TabNavigator({
     HOME:{
@@ -48,15 +48,16 @@ export const Tabbar=TabNavigator({
         activeTintColor:'red',
         inactiveTintColor :'#FFF'
     }
-})
+});
+
 export const SideMenu=DrawerNavigator({
     Menu:{
-        screen:Tabbar
+        screen:Tabbar,        
     }
 },
-    {
-        drawerWidth: 200,
+    {      
+        drawerWidth: 300,
         drawerPosition: 'left',
         contentComponent: props => <Menu {...props} />
     }
-)
+);
